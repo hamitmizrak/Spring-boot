@@ -9,17 +9,51 @@
 		<version>2.4.5</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.hamitmizrak</groupId>
 	<artifactId>SpringBootTutorials</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>HamitMizrakSpringBoot</name>
 	<description>Spring Boot Kursu</description>
+
+	<!-- properties -->
 	<properties>
 		<java.version>16</java.version>
 		<jsf-version>2.2.14</jsf-version>
+		
+		<primefaces.version>6.1</primefaces.version>
+		<primefaces.theme.version>1.0.10</primefaces.theme.version>
+		
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
+
+
+	<!-- Primefaces Theme -->
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Repo</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
+
+		 <!-- Primefaces Dependency -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces.version}</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>${primefaces.theme.version}</version>
+        </dependency>
+
 		<!-- Jsp-Jsf Projeleri için -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>

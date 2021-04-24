@@ -33,7 +33,15 @@ public class JsfApplication {
 	    @Bean
 	    public ServletContextInitializer servletContextInitializer() {
 	        return servletContext -> {
+	        	//JSF config
 	            servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
+	            
+	           //Primefaces Config
+	            servletContext.setInitParameter("primefaces.FONT_AWESOME", Boolean.TRUE.toString());
+	            servletContext.setInitParameter("primefaces.THEME", "bootstrap");
+	            servletContext.setInitParameter("primefaces.CLIENT_SIDE_VALIDATION", Boolean.TRUE.toString());
+	            servletContext.setInitParameter("javax.faces.FACELETS_SKIP_COMMENTS", Boolean.TRUE.toString());
+	           
 	        };
 	    }
 	     
@@ -41,5 +49,8 @@ public class JsfApplication {
 	    public ServletListenerRegistrationBean<ConfigureListener> jsfConfigureListener() {
 	        return new ServletListenerRegistrationBean<ConfigureListener>(new ConfigureListener());
 	    }
+	    
+	    
+	  
 
 }
