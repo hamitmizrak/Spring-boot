@@ -17,18 +17,33 @@
 	<description>Spring Boot Kursu</description>
 	<properties>
 		<java.version>16</java.version>
+		<jsf-version>2.2.14</jsf-version>
 	</properties>
 	<dependencies>
-
 		<!-- Jsp-Jsf Projeleri için -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
 
+		<!-- Jsp -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<!-- Jsf -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>${jsf-version}</version>
+		</dependency>
+
+		<!-- Jsf -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>${jsf-version}</version>
 		</dependency>
 
 		<!-- Spring Boot için -->
