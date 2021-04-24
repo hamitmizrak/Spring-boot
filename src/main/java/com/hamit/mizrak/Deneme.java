@@ -11,6 +11,6 @@ public class Deneme {
 	@GetMapping("/hamit-mizrak")
 	@ResponseBody
 	public String testMethod44() {
-		return "Merhabalar Güzel İnsanlar, Spring Framework Spring Boot Eğitmeni Hamit Mızrak";
+		return "Merhabalar Güzel İnsanlar, Spring Framework Spring Boot Eğitmeni Hamit Mızrak 24-Nisan-2021 ";
 	}
 }
