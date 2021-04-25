@@ -30,7 +30,7 @@
 	</properties>
 
 
-	<!-- Primefaces Theme -->
+	<!-- Primefaces Theme  repositories-->
 	<repositories>
 		<repository>
 			<id>prime-repo</id>
@@ -39,7 +39,16 @@
 		</repository>
 	</repositories>
 
+<!--++++++++++++++++++++++++++++++++++++ dependencies start +++++++++++++++++++++++++++++++++ -->
 	<dependencies>
+
+     <!-- Lombok için -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
 
 		 <!-- Primefaces Dependency -->
         <dependency>
@@ -93,12 +102,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- Lombook için -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
+		
 
 		<!-- Tomcat için için -->
 		<dependency>
@@ -114,6 +118,8 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+<!--++++++++++++++++++++++++++++++++++++ dependencies ends +++++++++++++++++++++++++++++++++ -->
 
 	<build>
 		<plugins>
