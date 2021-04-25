@@ -6,10 +6,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 
 public class JspController {
-
-	@GetMapping("/jsp")
+	// http://localhost:9292/index
+	@GetMapping("/index")
 	public String getIndexJsp() {
-		
 		return "index";
+	}
+
+	// http://localhost:9292/core/set
+	@GetMapping("/core/set")
+	public String getCoreSetOut() {
+		return "Jstl_Ders001_Core";
 	}
 }
