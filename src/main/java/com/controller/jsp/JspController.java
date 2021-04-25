@@ -49,4 +49,16 @@ public class JspController {
 		return "Jstl_Ders006_Core_Tokens";
 	}
 
+	// +++++++++++++++++++++++ fmt ++++++++++++++++++++++++
+
+	@GetMapping("/fmt/parseNumber")
+	public String getParseNumber() {
+		return "Jstl_Ders007_FMT_parseNumber";
+	}
+
+	@GetMapping("/fmt/formatDate")
+	public String getformatDate() {
+		return "Jstl_Ders008_FMT_formatDate";
+	}
+
 }
