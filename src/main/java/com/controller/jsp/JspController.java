@@ -61,4 +61,10 @@ public class JspController {
 		return "Jstl_Ders008_FMT_formatDate";
 	}
 
+	// +++++++++++++++++++++++ Functions ++++++++++++++++++++++++
+
+	@GetMapping("/fn/all")
+	public String getAll() {
+		return "Jstl_Ders009_FN_All";
+	}
 }
