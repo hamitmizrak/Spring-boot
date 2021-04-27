@@ -6,7 +6,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import lombok.extern.java.Log;
+
 @Controller
+@Log
 public class RegisterController {
 
 	@GetMapping("/post-register")
@@ -26,6 +29,7 @@ public class RegisterController {
 			System.out.println("sonuç: " + register);
 			return "Ders012_Form";
 		}
+		log.info("info:" + register);
 		System.out.println("sonuç: " + register);
 		model.addAttribute("basarili", "Başarılı harikasınız");
 		return "Ders013_Success";
