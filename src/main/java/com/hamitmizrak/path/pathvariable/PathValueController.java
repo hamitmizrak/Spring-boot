@@ -11,10 +11,9 @@ import lombok.extern.java.Log;
 @Log
 public class PathValueController {
 
+	// http://localhost:9292/path/path-variable/HamitMizrak
 	@GetMapping({ "/path/path-variable/{adi}", "/path/path-variable" })
-	public String getPathValue(Model model,
-
-			@PathVariable(name = "adi", required = false) String adi) {
+	public String getPathValue(Model model, @PathVariable(name = "adi", required = false) String adi) {
 
 		if (adi != null) {
 			model.addAttribute("path44", "Sonuc: " + adi);
