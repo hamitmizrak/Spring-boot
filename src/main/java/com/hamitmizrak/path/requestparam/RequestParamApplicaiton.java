@@ -1,4 +1,4 @@
-package com.hamitmizrak.requestparam;
+package com.hamitmizrak.path.requestparam;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

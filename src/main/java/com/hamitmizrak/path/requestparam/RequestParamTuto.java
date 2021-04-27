@@ -1,4 +1,4 @@
-package com.hamitmizrak.requestparam;
+package com.hamitmizrak.path.requestparam;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
