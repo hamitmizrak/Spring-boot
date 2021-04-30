@@ -14,14 +14,14 @@ import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "computer")
+
 @Data
-@AllArgsConstructor
+// @AllArgsConstructor
 @NoArgsConstructor
 
 public class ComputerEntity implements Serializable {
@@ -30,19 +30,25 @@ public class ComputerEntity implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "computerId")
-	private long computerId;
+	private Long computerId;
 
 	@Column(name = "computerName", length = 150)
 	private String computerName;
 
 	@Column(name = "computerPrice", length = 250, precision = 13, scale = 4, nullable = false)
-	private String computerPrice;
+	private double computerPrice;
 
-	@Column(name = "computerSecurityx", nullable = false, unique = true)
+	@Column(name = "computerSecurityx")
 	private String computerSecurity;
 
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDate;
+
+	public ComputerEntity(String computerName, double computerPrice, String computerSecurity) {
+		this.computerName = computerName;
+		this.computerPrice = computerPrice;
+		this.computerSecurity = computerSecurity;
+	}
 
 }
