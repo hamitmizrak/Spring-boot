@@ -21,16 +21,16 @@
 	<properties>
 		<java.version>16</java.version>
 		<jsf-version>2.2.14</jsf-version>
-		
+
 		<primefaces.version>6.1</primefaces.version>
 		<primefaces.theme.version>1.0.10</primefaces.theme.version>
-		
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 
-	<!-- Primefaces Theme  repositories-->
+	<!-- Primefaces Theme repositories -->
 	<repositories>
 		<repository>
 			<id>prime-repo</id>
@@ -39,23 +39,30 @@
 		</repository>
 	</repositories>
 
-<!--++++++++++++++++++++++++++++++++++++ dependencies start +++++++++++++++++++++++++++++++++ -->
+	<!--++++++++++++++++++++++++++++++++++++ dependencies start +++++++++++++++++++++++++++++++++ -->
 	<dependencies>
 
-	<!-- validation 
-         <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
-		
+		<!-- spring Boot icin JPA -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		-->
+
+<!--  spring Boot icin Mysql Driver  -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 
-     <!-- Lombok için -->
+		<!-- validation <dependency> <groupId>org.springframework.boot</groupId> 
+			<artifactId>spring-boot-starter-validation</artifactId> </dependency> <dependency> 
+			<groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-thymeleaf</artifactId> 
+			</dependency> -->
+
+
+		<!-- Lombok için -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -63,18 +70,18 @@
 		</dependency>
 
 
-		 <!-- Primefaces Dependency -->
-        <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>primefaces</artifactId>
-            <version>${primefaces.version}</version>
-        </dependency>
- 
-        <dependency>
-            <groupId>org.primefaces.themes</groupId>
-            <artifactId>all-themes</artifactId>
-            <version>${primefaces.theme.version}</version>
-        </dependency>
+		<!-- Primefaces Dependency -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>${primefaces.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>${primefaces.theme.version}</version>
+		</dependency>
 
 		<!-- Jsp-Jsf Projeleri için -->
 		<dependency>
@@ -115,7 +122,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		
+
 
 		<!-- Tomcat için için -->
 		<dependency>
@@ -132,7 +139,7 @@
 		</dependency>
 	</dependencies>
 
-<!--++++++++++++++++++++++++++++++++++++ dependencies ends +++++++++++++++++++++++++++++++++ -->
+	<!--++++++++++++++++++++++++++++++++++++ dependencies ends +++++++++++++++++++++++++++++++++ -->
 
 	<build>
 		<plugins>
