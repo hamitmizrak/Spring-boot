@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -15,6 +16,7 @@ import lombok.extern.java.Log;
 @Log
 public class EntityController {
 
+	// @Inject
 	@Autowired(required = false)
 	IComputerRepository computerRepository;
 
@@ -51,6 +53,23 @@ public class EntityController {
 		model.addAttribute("computerKey", computerEntity);
 		log.info(computerEntity.toString());
 		return "Jstl_Ders010_jpa_insert";
+	}
+
+	// FIND
+	// http:localhost:9292/jpa/computer/get/find/1
+	@GetMapping("/jpa/computer/get/find/{id44}")
+	@ResponseBody
+	public String findComputer(@PathVariable(name = "id44") Long computerId) {
+
+		java.util.Optional<ComputerEntity> optional = computerRepository.findById(computerId);
+		if (optional.isPresent()) {
+			ComputerEntity computerEntity = optional.get();
+			log.info(computerEntity.toString());
+			return computerEntity.toString();
+		} else {
+			return "aradığınız id bulunmamaktadır " + computerId;
+		}
+
 	}
 
 }
