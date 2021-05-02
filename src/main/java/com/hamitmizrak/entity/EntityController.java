@@ -1,6 +1,8 @@
 package com.hamitmizrak.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.java.Log;
 
+//
 @Controller
 @Log
 public class EntityController {
@@ -78,6 +81,7 @@ public class EntityController {
 			@RequestParam(name = "computerName") String computerName,
 			@RequestParam(name = "computerPrice") double computerPrice,
 			@RequestParam(name = "computerSecurity") String computerSecurity) {
+		// asd
 		java.util.Optional<ComputerEntity> optional = computerRepository.findById(id);
 		if (optional.isPresent()) {
 			ComputerEntity computerEntity = optional.get();
@@ -107,6 +111,23 @@ public class EntityController {
 		} else {
 			return "aradığınız id bulunmamaktadır ve silinemedi " + id;
 		}
+	}
+
+	// http:localhost:9292/jpa/computer/get/selectList
+	@GetMapping("/jpa/computer/get/selectList")
+	@ResponseBody
+	public String selectList() {
+
+		Iterable<ComputerEntity> iterableList = computerRepository.findAll();
+		List<ComputerEntity> listem = null;
+		for (ComputerEntity computerEntity : iterableList) {
+			listem = new ArrayList<>();
+			listem.add(computerEntity);
+			System.out.println(computerEntity);
+			log.info(computerEntity.toString());
+		}
+
+		return " değerler: " + listem;
 	}
 
 }
