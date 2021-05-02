@@ -86,6 +86,7 @@ public class EntityController {
 			computerEntity.setComputerSecurity(computerSecurity);
 			computerEntity.setCreationDate(new Date(System.currentTimeMillis()));
 			computerRepository.save(computerEntity);
+			log.info(computerEntity.toString());
 			return "guncellendi" + computerEntity.toString();
 		} else {
 			return "aradığınız id bulunmamaktadır ve güncellenedi " + id;
@@ -101,6 +102,7 @@ public class EntityController {
 		if (optional.isPresent()) {
 			ComputerEntity computerEntity = optional.get();
 			computerRepository.delete(computerEntity);
+			log.info(computerEntity.toString());
 			return "silindi" + computerEntity.toString();
 		} else {
 			return "aradığınız id bulunmamaktadır ve silinemedi " + id;
