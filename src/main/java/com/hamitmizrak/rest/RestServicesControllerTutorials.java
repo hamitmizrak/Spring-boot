@@ -1,5 +1,8 @@
 package com.hamitmizrak.rest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +35,16 @@ public class RestServicesControllerTutorials {
 		Violist violist = new Violist(100, "Hamit", "Mızrak", "35", "Malatya");
 		violist.setViolistCountry("Malatya".toUpperCase());
 		return violist;
+	}
+
+	// http:localhost:9292/rest/json/object/list
+	@GetMapping("/rest/json/object/list")
+	public List<Violist> getObjectJsonList() {
+		List<Violist> list = new ArrayList<Violist>();
+		for (int i = 0; i < 10; i++) {
+			list.add(new Violist((i + 1), "Hamit " + i * 2, "Mızrak", "35", "Malatya"));
+		}
+		return list;
 	}
 
 }
