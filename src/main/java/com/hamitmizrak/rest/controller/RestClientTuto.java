@@ -31,6 +31,7 @@ public class RestClientTuto {
 
 	// exchange
 	// get/post/put/delete hata ayıklama
+	// http://localhost:9292/rest/client/exchange
 	@GetMapping("/rest/client/exchange")
 	@ResponseBody
 	public String getClientExchange() {
@@ -46,5 +47,18 @@ public class RestClientTuto {
 			log.warning(temp.toString());
 		}
 		return list.toString().concat("son\n");
+	}
+
+	/////////////////////////////////////////// POST /////////////////////////////////////////////////////////////
+	// Post
+	// http://localhost:9292/rest/client/post
+	@GetMapping("/rest/client/post")
+	@ResponseBody
+	public String postClient() {
+		Violist violist = new Violist(100, "Hamit", "Mızrak", "35", "Türkiye in Malatya");
+		String uri = SabitDegisken.POSTURI;
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.postForObject(uri, violist, Void.class);
+		return "2021 Java Spring Boot işlem yapıldı";
 	}
 }

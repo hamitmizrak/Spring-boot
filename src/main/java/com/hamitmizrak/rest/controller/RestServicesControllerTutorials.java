@@ -5,11 +5,17 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.java.Log;
+
 @RestController
+@Log
 public class RestServicesControllerTutorials {
 
+	//////////////////////////////// GET /////////////////////////////
 	// http:localhost:9292/rest/json/string
 	@GetMapping("/rest/json/string")
 	public String getStringJson() {
@@ -55,5 +61,17 @@ public class RestServicesControllerTutorials {
 		Violist violist = new Violist(id, adi, soyadi, "35", "Malatya");
 		return violist;
 	}
+
+	////////////////////////////// POST ////////////////////////////////////////////
+	// http://localhost:9292/rest/object/gelenVeri
+	@PostMapping("/rest/object/gelenVeri")
+	public void postMappingData(@RequestBody Violist violist) {
+		System.out.println(violist);
+		log.warning(violist.toString());
+	}
+
+	///////////////////////////// DELETE ///////////////////////////////////////////
+
+	////////////////////////////// PUT /////////////////////////////////////////////
 
 }
