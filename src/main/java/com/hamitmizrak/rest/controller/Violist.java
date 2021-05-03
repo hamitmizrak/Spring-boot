@@ -1,4 +1,4 @@
-package com.hamitmizrak.rest;
+package com.hamitmizrak.rest.controller;
 
 import java.io.Serializable;
 
