@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -45,6 +46,14 @@ public class RestServicesControllerTutorials {
 			list.add(new Violist((i + 1), "Hamit " + i * 2, "Mızrak", "35", "Malatya"));
 		}
 		return list;
+	}
+
+	// http:localhost:9292/rest/json/object/parameters/ / /
+	@GetMapping("/rest/json/object/parameters/{id}/{adi}/{soyadi44}")
+	public Violist getObjectJsonParameters(@PathVariable("id") long id, @PathVariable("adi") String adi,
+			@PathVariable("soyadi44") String soyadi) {
+		Violist violist = new Violist(id, adi, soyadi, "35", "Malatya");
+		return violist;
 	}
 
 }
