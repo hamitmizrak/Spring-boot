@@ -42,6 +42,12 @@
 	<!--++++++++++++++++++++++++++++++++++++ dependencies start +++++++++++++++++++++++++++++++++ -->
 	<dependencies>
 
+		<!-- spring rest services -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		
 
 		<!-- spring Boot icin JPA -->
 		<dependency>
@@ -49,18 +55,13 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
+
 		<!-- spring Boot icin Mysql Driver -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-
-		<!-- validation <dependency> <groupId>org.springframework.boot</groupId> 
-			<artifactId>spring-boot-starter-validation</artifactId> </dependency> <dependency> 
-			<groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-thymeleaf</artifactId> 
-			</dependency> -->
 
 
 		<!-- Lombok için -->
@@ -71,65 +72,45 @@
 		</dependency>
 
 
-		<!-- Primefaces Dependency -->
+		<!-- Primefaces version -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>${primefaces.version}</version>
 		</dependency>
 
+         <!-- Primefaces themes -->
 		<dependency>
 			<groupId>org.primefaces.themes</groupId>
 			<artifactId>all-themes</artifactId>
 			<version>${primefaces.theme.version}</version>
 		</dependency>
 
-		<!-- Jsp-Jsf Projeleri için -->
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-		</dependency>
-
+		
 		<!-- Jsp -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
 
-		<!-- Jsf -->
+		<!-- Jsf api-->
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>${jsf-version}</version>
 		</dependency>
 
-		<!-- Jsf -->
+		<!-- Jsf impl -->
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>${jsf-version}</version>
 		</dependency>
 
-		<!-- Spring Boot için -->
+		<!-- Web Spring Boot için -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<!-- Mysql için -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-
-
-
-		<!-- Tomcat için için -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- Test için -->
