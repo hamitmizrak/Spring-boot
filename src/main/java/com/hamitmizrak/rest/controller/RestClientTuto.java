@@ -8,6 +8,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
@@ -49,7 +50,7 @@ public class RestClientTuto {
 		return list.toString().concat("son\n");
 	}
 
-	/////////////////////////////////////////// POST /////////////////////////////////////////////////////////////
+	/////////////////////////////////////////// POST(Client)////////////////////////////////////////////////////////////////////////////
 	// Post
 	// http://localhost:9292/rest/client/post
 	@GetMapping("/rest/client/post")
@@ -60,5 +61,20 @@ public class RestClientTuto {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.postForObject(uri, violist, Void.class);
 		return "2021 Java Spring Boot işlem yapıldı";
+	}
+
+	/////////////////////////////////////////// DELETE(Client)////////////////////////////////////////////////////////////////////////////
+	// Delete
+	// http://localhost:9292/rest/client/post
+	@GetMapping("/rest/client/delete/{gelenId}")
+	@ResponseBody
+	public String getClientDelete(@PathVariable("gelenId") long violistId) {
+		String uri = SabitDegisken.DELETEURI + violistId;
+		RestTemplate restTemplate = new RestTemplate();
+
+		restTemplate.exchange(uri, HttpMethod.DELETE, HttpEntity.EMPTY, Void.class);
+
+		return "ViolistId Silindi 2021 Client";
+
 	}
 }
