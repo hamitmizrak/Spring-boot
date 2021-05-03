@@ -65,16 +65,27 @@ public class RestClientTuto {
 
 	/////////////////////////////////////////// DELETE(Client)////////////////////////////////////////////////////////////////////////////
 	// Delete
-	// http://localhost:9292/rest/client/post
+	// http://localhost:9292/rest/client/delete/44
 	@GetMapping("/rest/client/delete/{gelenId}")
 	@ResponseBody
 	public String getClientDelete(@PathVariable("gelenId") long violistId) {
 		String uri = SabitDegisken.DELETEURI + violistId;
 		RestTemplate restTemplate = new RestTemplate();
-
 		restTemplate.exchange(uri, HttpMethod.DELETE, HttpEntity.EMPTY, Void.class);
-
+		log.warning("ViolistId Silindi 2021 Client");
 		return "ViolistId Silindi 2021 Client";
+	}
 
+	/////////////////////////////////////////// PUT(Client)////////////////////////////////////////////////////////////////////////////
+	// Put
+	// http://localhost:9292//rest/client/update/44
+	@GetMapping("/rest/client/update/{gelenId}")
+	@ResponseBody
+	public String getClientUpdate(@PathVariable("gelenId") long violistId) {
+		String uri = SabitDegisken.PUTURI + violistId;
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.exchange(uri, HttpMethod.PUT, HttpEntity.EMPTY, Void.class);
+		log.warning("ViolistId Güncellendi 2021 Client");
+		return "ViolistId Güncellendi 2021 Client";
 	}
 }
