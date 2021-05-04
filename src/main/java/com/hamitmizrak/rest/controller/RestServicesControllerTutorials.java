@@ -3,6 +3,7 @@ package com.hamitmizrak.rest.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,6 +42,15 @@ public class RestServicesControllerTutorials {
 	// http:localhost:9292/rest/json/object
 	@GetMapping("/rest/json/object")
 	public Violist getObjectJson() {
+		Violist violist = new Violist(100, "Hamit", "Mızrak", "35", "Malatya");
+		violist.setViolistCountry("Malatya".toUpperCase());
+		return violist;
+	}
+
+	// defaults xml
+	// http:localhost:9292/rest/xml/object
+	@GetMapping(value = "/rest/xml/object", produces = MediaType.APPLICATION_XML_VALUE)
+	public Violist getObjectXml() {
 		Violist violist = new Violist(100, "Hamit", "Mızrak", "35", "Malatya");
 		violist.setViolistCountry("Malatya".toUpperCase());
 		return violist;

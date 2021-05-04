@@ -42,12 +42,20 @@
 	<!--++++++++++++++++++++++++++++++++++++ dependencies start +++++++++++++++++++++++++++++++++ -->
 	<dependencies>
 
+		<!-- defaultta xml yapmak -->
+		<!--  -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+
+
 		<!-- spring rest services -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
-		
+
 
 		<!-- spring Boot icin JPA -->
 		<dependency>
@@ -79,21 +87,21 @@
 			<version>${primefaces.version}</version>
 		</dependency>
 
-         <!-- Primefaces themes -->
+		<!-- Primefaces themes -->
 		<dependency>
 			<groupId>org.primefaces.themes</groupId>
 			<artifactId>all-themes</artifactId>
 			<version>${primefaces.theme.version}</version>
 		</dependency>
 
-		
+
 		<!-- Jsp -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
 
-		<!-- Jsf api-->
+		<!-- Jsf api -->
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
